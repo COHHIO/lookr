@@ -31,3 +31,4 @@ templates
 ..Rcheck
 CODE_OF_CONDUCT.md
 CONTRIBUTING.md
+^lookr\.Rproj$

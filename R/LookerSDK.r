@@ -340,6 +340,12 @@ LookerSDK <- R6::R6Class(
         config = self$oauthHeader)$content
     },
     
+    allFolders <- function() {
+      self$refresh()
+      response <- self$userSession$folderApi$all_folders(
+        config = self$oauthHeader)$content
+    },
+    
     runLook = function(lookId, resultFormat = "json") {
       self$refresh()
       
