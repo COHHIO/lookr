@@ -63,6 +63,17 @@ UserSession <- R6::R6Class(
         private$.lookApi <- value
       }
     },
+    # accessor: folderApi
+    folderApi = function(value) {
+      if(missing(value)) {
+        if(is.null(private$.folderApi)) {
+          private$.folderApi <- FolderApi$new(self$apiClient)
+        }
+        return(private$.folderApi)
+      } else {
+        private$.folderApi <- value
+      }
+    },
     # accessor: queryApi
     queryApi = function(value) {
       if(missing(value)) {
@@ -170,6 +181,7 @@ UserSession <- R6::R6Class(
     .apiClient = NULL,
     .authClient = NULL,
     .lookApi = NULL,
+    .folderApi = NULL,
     .queryApi = NULL,
     .dashboardApi = NULL,
     .lookmlModelApi = NULL,
