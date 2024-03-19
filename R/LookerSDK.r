@@ -115,6 +115,17 @@ LookerSDK <- R6::R6Class(
       }
     },
     
+    folderApi = function(value) {
+      if(missing(value)) {
+        if(is.null(self$userSession$folderApi)) {
+          self$userSession$folderApi <- UserSession$new(self$settings)
+        }
+        return(self$userSession$folderApi)
+      } else {
+        self$userSession$folderApi <- value
+      }
+    },
+    
     oauthHeader = function(value) {
       if(missing(value)) {
         return(self$userSession$oauthHeader)
