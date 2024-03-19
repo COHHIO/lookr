@@ -45,6 +45,12 @@
 #'   \item{\code{allDashboards()}}{Returns a list of all dashboards in the instance.}
 #' }
 #' 
+#' #' 
+#' @section Folder Endpoints:
+#' \describe{
+#'   \item{\code{allFolders()}}{Returns a list of all folders in the instance.}
+#' }
+#' 
 #' @section Query Endpoints:
 #' \describe{
 #'   \item{\code{runInlineQuery(model, view, fields, filters, sorts, limit, queryTimezone)}}{Provided with mandatory query parameters (\code{model, view, fields}) plus optional parameters (\code{filters, sorts, limit, queryTimezone}), returns the results of the defined query.}
