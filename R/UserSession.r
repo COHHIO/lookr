@@ -256,6 +256,7 @@ UserSession <- R6::R6Class(
       private$.authClient <- NULL
       private$.userApi <- NULL
       private$.lookApi <- NULL
+      private$.folderApi
       private$.lookmlModelApi <- NULL
       private$.projectApi <- NULL
       private$.me <- NULL
