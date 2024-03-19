@@ -357,7 +357,7 @@ LookerSDK <- R6::R6Class(
         config = self$oauthHeader)$content
     },
     
-    allFolders <- function(self) {
+    allFolders = function() {
       self$refresh()
       httr::content(self$userSession$apiClient$callApi(
         url = paste0(self$userSession$apiClient$basePath, "/folders"),
