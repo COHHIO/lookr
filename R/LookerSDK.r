@@ -342,7 +342,7 @@ LookerSDK <- R6::R6Class(
     
     allFolders <- function() {
       self$refresh()
-      response <- self$userSession$folderApi$all_folders(
+      self$userSession$folderApi$all_folders(
         config = self$oauthHeader)$content
     },
     
