@@ -367,6 +367,19 @@ LookerSDK <- R6::R6Class(
         config = self$oauthHeader))
     },
     
+    # rewrite
+    folder = function(folder_id, resultFormat = "json") {
+      self$refresh()
+      
+      httr::content(self$userSession$apiClient$callApi(
+        url = paste0(self$userSession$apiClient$basePath,
+                     "/looks/", lookId),
+        queryParams = NULL,
+        headerParams = NULL,
+        method = "GET",
+        config = sdk$oauthHeader))
+    },
+    
     runLook = function(lookId, resultFormat = "json") {
       self$refresh()
       
@@ -378,13 +391,6 @@ LookerSDK <- R6::R6Class(
         headerParams = NULL,
         method = "GET",
         config = sdk$oauthHeader))
-      
-      # # generated class not working
-      # self$userSession$lookApi$run_look(
-      #   look_id = lookId,
-      #   result_format = "json",
-      #   query = list(fields = fields),
-      #   config = self$oauthHeader)$content
     },
     
     runInlineQuery = function(model, # these three are required

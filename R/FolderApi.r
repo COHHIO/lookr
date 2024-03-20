@@ -445,7 +445,7 @@ FolderApi <- R6::R6Class(
         urlPath <- gsub(paste0("\\{", "folder_id", "\\}"), `folder_id`, urlPath)
       }
 
-      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+      resp <- self$userSession$apiClient$callApi(url = paste0(self$userSession$apiClient$basePath, urlPath),
                                  method = "GET",
                                  queryParams = queryParams,
                                  headerParams = headerParams,
@@ -519,7 +519,7 @@ FolderApi <- R6::R6Class(
       }
 
     },
-    search_folders = function(fields, page, per_page, limit, offset, sorts, name, id, parent_id, creator_id, filter_or, is_shared_root, ...){
+      search_folders = function(fields, page, per_page, limit, offset, sorts, name, id, parent_id, creator_id, filter_or, is_shared_root, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- character()
