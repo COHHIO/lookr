@@ -51,6 +51,13 @@
 #'   \item{\code{allFolders()}}{Returns a list of all folders in the instance.}
 #' }
 #' 
+#' #' 
+#' #' 
+#' @section Folder Endpoints:
+#' \describe{
+#'   \item{\code{allFolderLooks()}}{Returns a list of all looks in the folder}
+#' }
+#' 
 #' @section Query Endpoints:
 #' \describe{
 #'   \item{\code{runInlineQuery(model, view, fields, filters, sorts, limit, queryTimezone)}}{Provided with mandatory query parameters (\code{model, view, fields}) plus optional parameters (\code{filters, sorts, limit, queryTimezone}), returns the results of the defined query.}
@@ -361,6 +368,16 @@ LookerSDK <- R6::R6Class(
       self$refresh()
       httr::content(self$userSession$apiClient$callApi(
         url = paste0(self$userSession$apiClient$basePath, "/folders"),
+        queryParams = NULL,
+        headerParams = NULL,
+        method = "GET",
+        config = self$oauthHeader))
+    },
+    
+    allFolderLooks = function(folder_id) {
+      self$refresh()
+      httr::content(self$userSession$apiClient$callApi(
+        url = paste0(self$userSession$apiClient$basePath, "/folders/", folder_id, "/looks"),
         queryParams = NULL,
         headerParams = NULL,
         method = "GET",
