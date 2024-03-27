@@ -397,14 +397,14 @@ LookerSDK <- R6::R6Class(
         config = self$oauthHeader))
     },
     
-    runLook = function(lookId, resultFormat = "json", queryParams = list()) {
+    runLook = function(lookId, resultFormat = "json") {
       self$refresh()
       
       httr::content(self$userSession$apiClient$callApi(
         url = paste0(self$userSession$apiClient$basePath,
                      "/looks/", lookId,
                      "/run/", resultFormat),
-        queryParams = queryParams,
+        queryParams = NULL,
         headerParams = NULL,
         method = "GET",
         config = self$oauthHeader))
