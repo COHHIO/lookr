@@ -394,7 +394,7 @@ LookerSDK <- R6::R6Class(
         queryParams = NULL,
         headerParams = NULL,
         method = "GET",
-        config = sdk$oauthHeader))
+        config = self$oauthHeader))
     },
     
     runLook = function(lookId, resultFormat = "json") {
@@ -407,7 +407,7 @@ LookerSDK <- R6::R6Class(
         queryParams = NULL,
         headerParams = NULL,
         method = "GET",
-        config = sdk$oauthHeader))
+        config = self$oauthHeader))
     },
     
     runInlineQuery = function(model, # these three are required
@@ -464,7 +464,7 @@ LookerSDK <- R6::R6Class(
         queryParams = NULL,
         headerParams = NULL,
         method = "GET",
-        config = sdk$oauthHeader))
+        config = self$oauthHeader))
       
       #self$userSession$lookmlModelApi$lookml_model(
       #  lookml_model_name = lookmlModelName,
@@ -485,7 +485,7 @@ LookerSDK <- R6::R6Class(
         queryParams = NULL,
         headerParams = NULL,
         method = "GET",
-        config = sdk$oauthHeader))
+        config = self$oauthHeader))
       #self$userSession$lookmlModelApi$lookml_model_explore(
       #  lookml_model_name = lookmlModelName,
       #  explore_name = exploreName,
