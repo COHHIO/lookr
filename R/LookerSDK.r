@@ -397,7 +397,7 @@ LookerSDK <- R6::R6Class(
         config = self$oauthHeader))
     },
     
-    runLook = function(lookId, resultFormat = "json") {
+    runLook = function(lookId, resultFormat = "json", ...) {
       self$refresh()
       
       httr::content(self$userSession$apiClient$callApi(
