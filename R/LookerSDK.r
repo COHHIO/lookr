@@ -403,7 +403,7 @@ LookerSDK <- R6::R6Class(
       httr::content(self$userSession$apiClient$callApi(
         url = paste0(self$userSession$apiClient$basePath,
                      "/looks/", lookId,
-                     "/run/", resultFormat),
+                     "/run/", resultFormat, "?limit=-1"),
         queryParams = NULL,
         headerParams = NULL,
         method = "GET",
